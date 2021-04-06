@@ -13,11 +13,11 @@ impl Solution {
         
         for (i, x) in nums.iter().enumerate()
         {
-            if i == 0
+            if i != 0
             {
-                continue;
+                run_sum.push(run_sum[i-1] + x);
             }
-            run_sum.push(run_sum[i-1] + x);
+            
         }
         
         run_sum
