@@ -11,13 +11,9 @@ impl Solution {
     pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
         let mut run_sum = vec![nums[0]];
         
-        for (i, x) in nums.iter().enumerate()
+        for (i, x) in nums.iter().enumerate().skip(1)
         {
-            if i != 0
-            {
-                run_sum.push(run_sum[i-1] + x);
-            }
-            
+            run_sum.push(run_sum[i-1] + x);
         }
         
         run_sum
